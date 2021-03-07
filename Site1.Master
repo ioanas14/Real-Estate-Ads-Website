@@ -1,0 +1,119 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ProiectBD.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="bootstrap/js/popper.min.js"></script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <link href="css/custom.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/logo.jpg" width="30" height="30" />
+                    Anunțuri imobiliare
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="homepage.aspx">Pagina principală</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav">
+
+                        <%--se apasa pt a vizualiza toate proprietatile de catre utilizatori--%>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="proprietatiButton" runat="server" OnClick="proprietatiButton_Click">Proprietăți</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="loginButton" runat="server" OnClick="loginButton_Click">Log-in</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="inreguserButton" runat="server" OnClick="inreguserButton_Click">Înregistrare utilizator</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="inregproprButton" runat="server" OnClick="inregproprButton_Click">Înregistrare proprietar</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="logoutButton" runat="server" OnClick="logoutButton_Click" Visible="False">Log-out</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="adaugarepropButton" runat="server" OnClick="adaugarepropButton_Click" Visible="False">Adăugare proprietate</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="hellouserButton" runat="server" OnClick="hellouserButton_Click" Visible="False">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+        </div>
+
+
+        
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+
+        
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="adminloginButton" runat="server" OnClick="adminloginButton_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="modifpropButton" runat="server" OnClick="modifpropButton_Click" Visible="False">Modificare Proprietari</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="modifanuntButton" runat="server" OnClick="modifanuntButton_Click" Visible="False">Modificare Anunțuri</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="modifutilizButton" runat="server" OnClick="modifutilizButton_Click" Visible="False">Modificare Utilizatori</asp:LinkButton>
+                            &nbsp;    
+                            <asp:LinkButton class="footerlinks" ID="userStatButton" runat="server" Visible="False" OnClick="userStatButton_Click">Statistici Utilizatori</asp:LinkButton>
+                            &nbsp; 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+    </form>
+</body>
+</html>
